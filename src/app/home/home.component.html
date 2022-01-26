@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <div class="card text-center" style="padding: 20px;">
+     <h1>Just Apply</h1>
+     
+<table  class="table table-striped">
+    <thead class="thead-inverse thead-dark">
+      <tr>
+        <th>Company Name</th>
+        <th>Salary(UpTo)</th>
+        <th>Profile</th>
+        <th>Link</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let job of jobs">
+        <td>{{ job.companyName }}</td>
+        <td>{{ job.salary }}</td>
+        <td>{{ job.profile}}</td>
+      <td> <a href="{{job.link}}" target="_blank" rel="noopener noreferrer" class="link-primary">Apply</a>
+      </td>
+       
+      </tr>
+    </tbody>
+  </table>
+    </div>
+    
+ </div>
+ 

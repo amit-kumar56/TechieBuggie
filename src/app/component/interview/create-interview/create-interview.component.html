@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-md-6">
+      <a routerLink="/interview" class="btn btn-link">
+        <i class="fa fa-arrow-circle-o-left"></i> Back To List of Questions
+      </a>
+    </div>
+    <div class="col-md-6">
+  
+    </div>
+  </div>
+  
+  <div class="card">
+    <div class="card-header">
+      Add Question and Answer
+    </div>
+    <div class="card-body">
+      <form (ngSubmit) = "onSubmit()">
+  
+        <div class="form-group">
+          <input type="text" class="form-control" name="question" [(ngModel)]="interview.question"
+            placeholder="question"
+            minlength="2"
+            required>
+        </div>
+  
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            name="type"
+            [(ngModel)]="interview.type"
+            placeholder="type"
+            minlength="2"
+            required>
+        </div>
+  
+        <div class="form-group">
+          <input
+            type="textbox"
+            class="form-control"
+            name="answer"
+            [(ngModel)]="interview.answer"
+            placeholder="answer"
+            minlength="2"
+            required>
+        </div>
+  
+        <input type="submit"  class="btn btn-primary btn-block">
+      </form>
+    </div>
+  </div>
+  

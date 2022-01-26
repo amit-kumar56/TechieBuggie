@@ -1,0 +1,40 @@
+<hr>
+<a routerLink="/create-job" *ngIf="userService.roleMatch(['Admin'])" class="btn btn-primary">Add new Job</a>
+<br>
+<br>
+
+<table  class="table table-striped">
+  <thead class="thead-inverse thead-dark">
+    <tr>
+      <th>Company Name</th>
+      <th>Salary(UpTo)</th>
+      <th>Profile</th>
+      <th>Link</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let job of jobs">
+      <td>{{ job.companyName }}</td>
+      <td>{{ job.salary }}</td>
+      <td>{{ job.profile}}</td>
+    <td> <a href="{{job.link}}" target="_blank" rel="noopener noreferrer" class="link-primary">Apply</a>
+    </td>
+      <td>
+        <button (click) = "updateJob(job.id)" *ngIf="userService.roleMatch(['Admin'])" class="btn btn-secondary btn-sm">
+          <i class="fa fa-trash"></i> edit
+        </button>
+      </td>
+      <td>
+        <button (click) = "deleteJob(job.id)" *ngIf="userService.roleMatch(['Admin'])" class="btn btn-secondary btn-sm">
+          <i class="fa fa-trash"></i> Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #noCompanies>
+  <h5>There are no clients in the system.</h5>
+</ng-template>

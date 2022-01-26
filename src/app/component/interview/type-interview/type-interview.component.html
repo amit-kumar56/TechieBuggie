@@ -1,0 +1,24 @@
+<h1 class="text-center">{{message}}</h1>
+<a routerLink="/create-interview" *ngIf="userService.roleMatch(['Admin'])" class="btn btn-primary">Add new Interview Questions</a>
+<br>
+<br>
+<ngb-accordion #acc="ngbAccordion" *ngFor="let interview of interview">
+      <ngb-panel id="toggle-1" title="Q.{{ interview.question }}"> 
+      <ng-template ngbPanelContent>
+      {{ interview.answer}}
+      <button (click) = "updateInterview(interview.id)" *ngIf="userService.roleMatch(['Admin'])" class="btn btn-secondary btn-sm bg-info mb-3">
+        <i class="fa fa-trash"></i> edit
+      </button>
+      <button (click) = "deleteInterview(interview.id)" *ngIf="userService.roleMatch(['Admin'])" class="btn btn-secondary btn-sm bg-info mb-3">
+        <i class="fa fa-trash"></i> Delete
+      </button>
+    
+  </ng-template>
+  </ngb-panel>
+</ngb-accordion>
+
+
+
+<ng-template #noCompanies>
+  <h5>There are no clients in the system.</h5>
+</ng-template>

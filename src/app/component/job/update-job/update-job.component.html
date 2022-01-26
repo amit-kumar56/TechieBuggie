@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col-md-6">
+      <a routerLink="/job" class="btn btn-link">
+        <i class="fa fa-arrow-circle-o-left"></i> Back To List of Jobs
+      </a>
+    </div>
+    <div class="col-md-6">
+  
+    </div>
+  </div>
+  
+  <div class="card">
+    <div class="card-header">
+      Add Jobs
+    </div>
+    <div class="card-body">
+      <form (ngSubmit) = "onSubmit()">
+  
+        <div class="form-group">
+          <input type="text" class="form-control" name="companyName" [(ngModel)]="job.companyName"
+            placeholder="Company Name"
+            minlength="2"
+            required>
+        </div>
+  
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            name="salary"
+            [(ngModel)]="job.salary"
+            placeholder="salary"
+            minlength="2"
+            required>
+        </div>
+  
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            name="profile"
+            [(ngModel)]="job.profile"
+            placeholder="profile"
+            minlength="2"
+            required>
+        </div>
+  
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            name="link"
+            [(ngModel)]="job.link"
+            placeholder="link"
+            minlength="2"
+            required>
+        </div>
+  
+        <input type="submit"  class="btn btn-primary btn-block">
+      </form>
+    </div>
+  </div>
+  
