@@ -38,6 +38,7 @@ public class JobController
     @PostMapping(path = "")
     public ResponseEntity<?> addJobs(@RequestBody jobDto jobsDto) {
     	////hello how are you
+        ///habibi come to dubai
         return ResponseEntity.ok(jobsService.addJob(jobsDto));
     }
 
