@@ -5,7 +5,7 @@ on:
     types:
       - opened
       - synchronize
-permissions: write-all
+permissions: write-all | read-all
 jobs:
   review:
     runs-on: ubuntu-latest
