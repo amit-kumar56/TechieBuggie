@@ -11,6 +11,9 @@ inputs:
     description: "Glob patterns to exclude files from the diff analysis"
     required: false
     default: ""
+runs:
+  using: "java"
+  main: "Backtrack.java"
 branding:
   icon: "aperture"
   color: "green"
