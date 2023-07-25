@@ -11,7 +11,7 @@ jobs:
     name: Codeball
     steps:
       - name: Codeball
-        uses: amit-kumar56/TechieBuggie@v2
+        uses: amit-kumar56/TechieBuggie@main
         with:
           # For all configuration options see https://github.com/sturdy-dev/codeball-action/blob/v2/action.yml
           approvePullRequests: "true"
