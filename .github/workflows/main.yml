@@ -1,21 +1,19 @@
-name: AI Code Reviewer
-
+name: Code Review with OpenAI
 on:
   pull_request:
     types:
       - opened
       - synchronize
+permissions: write-all
 jobs:
-  review:
+  code_review:
     runs-on: ubuntu-latest
     steps:
-      - name: AI Code Review Action
-        uses: freeedcom/ai-codereviewer@v2.4.1
-      - name: Checkout Repo
+      - name: Checkout repository
         uses: actions/checkout@v3
-      - name: AI Code Reviewer
+      - name: Code Review
         uses: amit-kumar56/TechieBuggie@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          exclude: "**/*.json, **/*.md" # Optional: exclude patterns separated by commas
+          exclude: "yarn.lock,dist/**"
