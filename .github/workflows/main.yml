@@ -1,5 +1,4 @@
 name: AI Code Reviewer
-permissions: read-all|write-all
 
 on:
   pull_request:
