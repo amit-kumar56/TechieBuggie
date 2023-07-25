@@ -1,5 +1,4 @@
 name: Codeball
-permissions: read-all|write-all
 
 on:
   pull_request: {}
