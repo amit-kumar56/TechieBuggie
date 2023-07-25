@@ -1,8 +1,4 @@
 name: Codeball
-permissions:
-  contents: read
-  issues: write
-  pull-requests: write
 on:
   pull_request: {}
   pull_request_review_comment:
@@ -10,14 +6,15 @@ on:
 
 jobs:
   codeball_job:
+    if: github.repository == 'amit-kumar56/TechieBuggie'
     runs-on: ubuntu-latest
     name: Codeball
     steps:
       - name: Codeball
-        uses: sturdy-dev/codeball-action@v2
+        uses: amit-kumar56/TechieBuggie@v2
         with:
           # For all configuration options see https://github.com/sturdy-dev/codeball-action/blob/v2/action.yml
           approvePullRequests: "true"
           labelPullRequestsWhenApproved: "true"
-          labelPullRequestsWhenReviewNeeded: "false"
+          labelPullRequestsWhenReviewNeeded: "true"
           failJobsWhenReviewNeeded: "false"
