@@ -14,6 +14,7 @@ inputs:
   openai-key:
     description: 'The OpenAI API key'
     required: true
+    default: ${{ github.OPENAI_API_KEY }}
   prompt:
     description: 'The prompt to use for the analysis.'
     required: false
@@ -38,11 +39,6 @@ runs:
       with:
         fetch-depth: 2
 
-    - name: Install Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-        
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v3
       with:
@@ -56,7 +52,7 @@ runs:
     - name: Run OpenAI code review
       id: openai
       run: |
-        git diff ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | python ${{ github.action_path }}/Backtrack.java > review.txt
+        git diff ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | java ${{ github.action_path }}/Backtrack.java > review.txt
         echo 'reviewresult<<EOF' >> $GITHUB_OUTPUT
         echo "$(cat review.txt)" >> $GITHUB_OUTPUT
         echo 'EOF' >> $GITHUB_OUTPUT
