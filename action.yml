@@ -52,7 +52,7 @@ runs:
     - name: Run OpenAI code review
       id: openai
       run: |
-        git diff ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | java ${{ github.action_path }}/Backtrack.java > review.txt
+        git diff ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | java ${{ github.action_path }}/Backtrack > review.txt
         echo 'reviewresult<<EOF' >> $GITHUB_OUTPUT
         echo "$(cat review.txt)" >> $GITHUB_OUTPUT
         echo 'EOF' >> $GITHUB_OUTPUT
