@@ -6,7 +6,7 @@ class Solution {
   public static void main(String[] args) {
        myMethod();
   }
-    /*
+
     public void solveSudoku(char[][] board) {
         fn(board);
     }
@@ -55,6 +55,6 @@ class Solution {
         }
         return true;
     }
-    */
+    
 }
 
