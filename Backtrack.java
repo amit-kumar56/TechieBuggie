@@ -45,6 +45,7 @@ class Solution {
         {
             if(board[row][i]==c)
             {
+                System.out.print(c)
                 return false;
             }
             if(board[i][col]==c)
@@ -53,6 +54,8 @@ class Solution {
             }
             if(board[3*(row/3)+i/3][3*(col/3)+i%3]==c) return false;
         }
+                        System.out.print(c)
+
         return true;
     }
     
