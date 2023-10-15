@@ -21,7 +21,3 @@ jobs:
           MODEL:
           top_p: 1
           temperature: 1
-- name: Super-Linter
-  # You may pin to the exact commit or the version.
-  # uses: super-linter/super-linter@3213b9ea991e2d45d760ea8a76aaebad8a2bdb1a
-  uses: super-linter/super-linter@v5.4.0
